@@ -1,4 +1,6 @@
 /**
- * Ce pakcage contient toutes les classes concernant le tp7 du 5 mars 2015
+ * Ce package contient bla bla bla
+ * @author Vroman MN
  */
+
 package tp8_;
