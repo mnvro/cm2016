@@ -12,7 +12,7 @@ public class MainExercice {
 		tabEx[0] = new QCM(1, "(x+6)² est égal à", 
 				tabProposition, 1);
 		tabEx[1] = new ExerciceATrou(2, 
-		  "Complète cette phrase avec le verbe entre parenthèses conjugué au « simple present »", 
+		  "Complète ... au « simple present »", 
 		  "Jane", "buys", "(buy) beautiful clothes");
 		
 

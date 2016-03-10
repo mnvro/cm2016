@@ -1,6 +1,5 @@
-package tp7_correction_interro;
 
-public class Date extends Affichable {
+public class Date implements Comparable<Date>  {
 	private int jj;
 	private int mm;
 	private int aaaa;
@@ -13,12 +12,10 @@ public class Date extends Affichable {
 	public String toString() {
 		return jj+"/"+mm+"/"+aaaa;
 	}
-	public void affiche() {
-		System.out.println(this);
-	}
-	public static void main(String args[]){
-		Date d1 = new Date("30/12/1969");
-		d1.affiche();
+	@Override
+	public int compareTo(Date o) {
+		// TODO Auto-generated method stub
+		return this.aaaa*10000 + this.mm*100 + this.jj -
+				(o.aaaa*10000 + o.mm*100 + o.jj);
 	}
 }
-
