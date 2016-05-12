@@ -13,12 +13,15 @@ import java.awt.GridBagConstraints;
 import java.awt.Insets;
 import javax.swing.JTextField;
 import java.awt.event.ActionListener;
+import java.net.InetAddress;
+import java.net.UnknownHostException;
 import java.awt.event.ActionEvent;
 
 public class JFrameClasse extends JFrame implements ActionListener {
 
 	private JPanel contentPane;
 	private JTextField jTextFieldIP;
+	private JLabel jLabelResultat;
 
 	/**
 	 * Launch the application.
@@ -38,8 +41,9 @@ public class JFrameClasse extends JFrame implements ActionListener {
 
 	/**
 	 * Create the frame.
+	 * @throws UnknownHostException 
 	 */
-	public JFrameClasse() {
+	public JFrameClasse() throws UnknownHostException {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
@@ -61,7 +65,8 @@ public class JFrameClasse extends JFrame implements ActionListener {
 		contentPane.add(jLabelIP, gbc_jLabelIP);
 		
 		jTextFieldIP = new JTextField();
-		jTextFieldIP.setText("192.168.0.1");
+		InetAddress[] tabIa = InetAddress.getAllByName("EP890");
+		jTextFieldIP.setText(tabIa[2].getHostAddress());
 		GridBagConstraints gbc_jTextFieldIP = new GridBagConstraints();
 		gbc_jTextFieldIP.insets = new Insets(0, 0, 5, 0);
 		gbc_jTextFieldIP.fill = GridBagConstraints.HORIZONTAL;
@@ -77,7 +82,7 @@ public class JFrameClasse extends JFrame implements ActionListener {
 		gbc_jLabelClasse.gridy = 1;
 		contentPane.add(jLabelClasse, gbc_jLabelClasse);
 		
-		JLabel jLabelResultat = new JLabel("New label");
+		jLabelResultat = new JLabel("New label");
 		GridBagConstraints gbc_jLabelResultat = new GridBagConstraints();
 		gbc_jLabelResultat.insets = new Insets(0, 0, 5, 0);
 		gbc_jLabelResultat.gridx = 1;
@@ -105,8 +110,11 @@ public class JFrameClasse extends JFrame implements ActionListener {
 		switch (e.getActionCommand()){
 		case "Cancel" :
 			jTextFieldIP.setText("");
+			jLabelResultat.setText("");
 			break;
 		case "OK" : 
+			IP ip = new IP(jTextFieldIP.getText());
+			jLabelResultat.setText(ip.getClasse()+"");
 			break;
 		}
 		
