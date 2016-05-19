@@ -1,15 +1,12 @@
 package tp17;
-
 import javax.swing.JButton;
 
-public class MesJButton extends JButton {
+public class MonJButton extends JButton {
 	private int ligne;
 	private int colonne;
 	
-	
-	
-	public MesJButton(int ligne, int colonne) {
-		super("("+ligne+","+colonne+")");
+	public MonJButton(int ligne, int colonne) {
+		super("Toto("+ligne+","+colonne+")");
 		this.ligne = ligne;
 		this.colonne = colonne;
 	}

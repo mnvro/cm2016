@@ -30,8 +30,8 @@ public class Etu {
 	public double moyenne(){
 		if (cotes.size() == 0) return 0;
 		double somme=0;
-		for (Double cote : cotes) {
-			somme+=cote;
+		for (Double element : cotes) {
+			somme += element;
 		}
 		return somme/cotes.size();
 	}

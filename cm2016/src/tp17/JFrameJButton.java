@@ -19,7 +19,7 @@ public class JFrameJButton extends JFrame implements ActionListener{
 	private JPanel contentPane;
 	private int nbLignes = 5;
 	private int nbColonnes = 3;
-	private MesJButton[][] tabJButton;
+	private MonJButton[][] tabJButton;
 
 	/**
 	 * Launch the application.
@@ -49,7 +49,7 @@ public class JFrameJButton extends JFrame implements ActionListener{
 		nbColonnes = Integer.parseInt(JOptionPane.showInputDialog(
 				"Combien de colonnes voulez-vous?"
 		));
-		tabJButton = new MesJButton[nbLignes][nbColonnes];
+		tabJButton = new MonJButton[nbLignes][nbColonnes];
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -62,7 +62,7 @@ public class JFrameJButton extends JFrame implements ActionListener{
 		contentPane.setLayout(gbl_contentPane);
 		for (int i = 0; i < nbLignes; i++) {
 			for (int j= 0; j < nbColonnes; j++) {
-				tabJButton[i][j] = new MesJButton(i,j);
+				tabJButton[i][j] = new MonJButton(i,j);
 				tabJButton[i][j].addActionListener(this);
 				GridBagConstraints gbc_btnNewButton = new GridBagConstraints();
 				gbc_btnNewButton.gridx = j;
@@ -75,7 +75,7 @@ public class JFrameJButton extends JFrame implements ActionListener{
 
 	@Override
 	public void actionPerformed(ActionEvent arg0) {
-		MesJButton mj = (MesJButton)arg0.getSource();
+		MonJButton mj = (MonJButton)arg0.getSource();
 		System.out.println("on a cliqué en ("+mj.getLigne()+","+
 				mj.getColonne()+")"
 		);
