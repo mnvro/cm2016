@@ -6,7 +6,7 @@ public class MonJButton extends JButton {
 	private int colonne;
 	
 	public MonJButton(int ligne, int colonne) {
-		super("Toto("+ligne+","+colonne+")");
+		super("("+ligne+","+colonne+")");
 		this.ligne = ligne;
 		this.colonne = colonne;
 	}

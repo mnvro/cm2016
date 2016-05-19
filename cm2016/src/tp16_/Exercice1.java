@@ -100,6 +100,12 @@ public class Exercice1 extends JFrame implements ActionListener {
 		if (source == case1){
 			System.out.println("on a cliqué sur case 1");
 		}
+		if (source == case2){
+			System.out.println("on a cliqué sur case 2");
+		}
+		if (source == case3){
+			System.out.println("on a cliqué sur case 3");
+		}
 	}
 
 }
